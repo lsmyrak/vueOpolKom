@@ -1,14 +1,15 @@
 <template>
-    <div v-for="user in users" :key="user.id">
-      <p>{{ user.id }}</p> 
-      <p> {{ user.firstName }}</p>
-      <p>{{ user.lastName }}</p>
-      <p>{{ user.email }}</p>
-      <p>{{ user.userRole.name }}</p>
-      <p>{{ user.works.count }}</p>
-      <p>{{ user.works.totalPrice }}</p>
-
+    <div v-for="work in works" :key="work.id">
+        <p>{{ works.totalPrice }}</p>
+        <p>{{ work.count }}</p>
+        <p>{{ work.id }}</p>
+        <p>{{ work.dateOfWork }}</p>
+        <p>{{ work.dateOfNote }}</p>
+        <p>{{ work.tasks }}</p>
+        <p>{{ work.place }}</p>
+        <p>{{ work.price }}</p>
     </div>
+    
   </template>
   
   <script>
@@ -25,9 +26,9 @@
           .then(data => this.users = data)       
       }
     },
+    
     mounted() {
       this.getData();
     }
   }
   </script>
-  
