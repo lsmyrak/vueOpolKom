@@ -1,12 +1,12 @@
 <template>
-  <div v-for="user in users" :key="user.id">
-    <p>{{ user.id }}</p>
-    <p>{{ user.firstName }}</p>
-    <p>{{ user.lastName }}</p>
-    <p>{{ user.email }}</p>
-    <p>{{ user.userRole.name }}</p>
-    <p>{{ user.works.count }}</p>
-    <p>{{ user.works.totalPrice }}</p>
+  <div class="info-item" v-for="user in users" :key="user.id">
+    <p class="user-icon user-id">{{ user.id }}</p>
+    <p class ="user-icon first-name">{{ user.firstName }}</p>
+    <p class="last-name">{{ user.lastName }}</p>
+    <p class="user-icon email">{{ user.email }}</p>
+    <p class="user-icon user-role" >{{ user.userRole.name }}</p>
+    <p> Ilość zadań :  {{ user.works.count }}</p>
+    <p>Łączna cena : {{ user.works.totalPrice }}</p>
   </div>
 </template>
   
