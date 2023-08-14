@@ -1,0 +1,1 @@
+export const BASE_URL_API = "http://lsmyrak.duckdns.org:8080/api/"

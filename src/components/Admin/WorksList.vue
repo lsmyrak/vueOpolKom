@@ -13,17 +13,18 @@
   </template>
   
   <script>
+  import AdminService from '@/Services/AdminService';
   export default {
     data() {
       return {
-        users: []
+        works: []
       }
     },
     methods: {
       getData() {
-        fetch('http://lsmyrak.duckdns.org:8080/api/Admin/get-all-user')
-          .then(response => response.json())
-          .then(data => this.users = data)       
+        AdminService.getAllWorks().then((response) =>
+        this.users = response.data)
+      console.log(this.works);
       }
     },
     
