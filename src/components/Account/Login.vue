@@ -10,6 +10,7 @@
 
 <script>
 import AuthService from '@/Services/AuthService';
+
 export default {
     name: "App",
     data() {

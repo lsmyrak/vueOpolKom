@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL_API } from "./URL";
+import { BASE_URL_API } from "../Common/URL"
 
 class AuthService {
   login(email, password)  {

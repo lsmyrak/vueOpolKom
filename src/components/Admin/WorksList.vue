@@ -23,8 +23,7 @@
     methods: {
       getData() {
         AdminService.getAllWorks().then((response) =>
-        this.users = response.data)
-      console.log(this.works);
+        this.users = response.data) 
       }
     },
     

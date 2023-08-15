@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import UserList from './components/Admin/UserList.vue';
+import WorkList from './components/Admin/WorksList.vue';
 
 export default {
   name: 'App',
   components: {
-    UserList
+    WorkList
 }
 }
 </script>
