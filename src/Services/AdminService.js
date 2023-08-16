@@ -11,7 +11,15 @@ class AdminService {
     }
  
     getAllWorks(startDate, stopDate) {
-        return axios.get(BASE_URL_API + "Admin/get-all-works?startdate="+startDate+"&stopDate"+stopDate, {
+        if(startDate==undefined)
+        {
+            startDate = "10.10.2020";
+        }
+        if(stopDate==undefined)
+        {
+            stopDate= "10.10.2030";
+        }
+        return axios.get(BASE_URL_API + "Admin/get-all-works?startdate="+startDate+"&stopDate="+stopDate, {
             headers: authHeader()
         });
     }    

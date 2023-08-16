@@ -1,34 +1,43 @@
 <template>
-    <div v-for="work in works" :key="work.id">
-        <p>{{ works.totalPrice }}</p>
-        <p>{{ work.count }}</p>
-        <p>{{ work.id }}</p>
-        <p>{{ work.dateOfWork }}</p>
-        <p>{{ work.dateOfNote }}</p>
-        <p>{{ work.tasks }}</p>
-        <p>{{ work.place }}</p>
-        <p>{{ work.price }}</p>
+  <div class="app">
+  <div class="work-container">
+    <p>{{ works.totalPrice }}</p>
+    <p>{{ works.count }}</p>
+    <div v-for="work in works.works" :key="work.id">
+      <div class="info-item-work">
+        <p class="">ID: {{ work.id }}</p>
+        <p class="">Data pracy: {{ work.dateOfWork }}</p>
+        <p class="">Data Wpisu: {{ work.dateOfNote }}</p>
+        <p class="">Miejsce: {{ work.place }}</p>
+        <p class="">Rodzaj pracy: {{ work.kindOfWork }}</p>
+        <p class="">Zadania: {{ work.tasks }}</p>
+        <p class="">Koszt: (zł) {{ work.rice }}</p>
+      </div>
     </div>
-    
-  </template>
-  
-  <script>
-  import AdminService from '@/Services/AdminService';
-  export default {
-    data() {
-      return {
-        works: []
-      }
-    },
-    methods: {
-      getData() {
-        AdminService.getAllWorks().then((response) =>
-        this.users = response.data) 
-      }
-    },
-    
-    mounted() {
-      this.getData();
+  </div>
+  </div>
+</template>
+
+<script>
+
+import AdminService from '@/Services/AdminService';
+
+export default {
+  data() {
+    return {
+      works: []
     }
+  },
+
+  methods: {
+    getData() {
+      AdminService.getAllWorks().then((response) =>
+        this.works = response.data)
+    }
+  },
+
+  mounted() {
+    this.getData();
   }
-  </script>
+}
+</script>
