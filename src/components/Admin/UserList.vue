@@ -1,20 +1,16 @@
 <template>
   <div class="app">
-  <div class="work-container">
-    <p>{{ works.totalPrice }}</p>
-    <p>{{ works.count }}</p>
-    <div v-for="work in works.works" :key="work.id">
-      <div class="info-item-work">
-        <p class="">ID: {{ work.id }}</p>
-        <p class="">Data pracy: {{ work.dateOfWork }}</p>
-        <p class="">Data Wpisu: {{ work.dateOfNote }}</p>
-        <p class="">Miejsce: {{ work.place }}</p>
-        <p class="">Rodzaj pracy: {{ work.kindOfWork }}</p>
-        <p class="">Zadania: {{ work.tasks }}</p>
-        <p class="">Koszt: (zł) {{ work.rice }}</p>
+    <div class="user-container">      
+      <div class="info-item" v-for="user in users" :key="user.id">
+        <p class="user-icon user-id">{{ user.id }}</p>
+        <p class="user-icon first-name">{{ user.firstName }}</p>
+        <p class="last-name">{{ user.lastName }}</p>
+        <p class="user-icon email">{{ user.email }}</p>
+        <p class="user-icon user-role">{{ user.userRole.name }}</p>
+        <p> Ilość zadań : {{ user.works.count }}</p>
+        <p>Łączna cena : {{ user.works.totalPrice }}</p>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -25,14 +21,14 @@ import AdminService from '@/Services/AdminService';
 export default {
   data() {
     return {
-      works: []
+      users: []
     }
   },
 
   methods: {
     getData() {
-      AdminService.getAllWorks().then((response) =>
-        this.works = response.data)
+      AdminService.getAllUser().then((response) =>
+        this.users = response.data)
     }
   },
 

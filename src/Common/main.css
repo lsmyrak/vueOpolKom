@@ -368,15 +368,15 @@ body {
 .work-container {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   width: calc(100% - 50px);
   gap: 25px;
   padding: 25px;
+  height: 100%;
 }
 .info-item-work {
   width: calc(31.9% - 50px);
-  height: auto;
   padding: 15px 25px;
   background-color: #ffffff;
   box-shadow: 0 0 15px 0 #ccc;

@@ -1,18 +1,19 @@
 <template>
   <div id="app">
-    <UserList />
+    <!-- <UserList /> -->
+    <WorksList />
   </div>
 </template>
 
 <script>
-// import WorksList from './components/Admin/WorksList.vue';
-import UserList from './components/Admin/UserList.vue';
+ import WorksList from './components/Admin/WorksList.vue';
+// import UserList from './components/Admin/UserList.vue';
 
 export default {
   name: 'App',
   components: {
-    UserList
-    // WorksList
+    // UserList
+     WorksList
   }
 }
 </script>

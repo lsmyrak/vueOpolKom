@@ -1,20 +1,18 @@
 <template>
   <div class="app">
-  <div class="work-container">
-    <p>{{ works.totalPrice }}</p>
-    <p>{{ works.count }}</p>
-    <div v-for="work in works.works" :key="work.id">
-      <div class="info-item-work">
+    <p>Całkowity koszy wyselekcionowanych zadań: {{ works.totalPrice }}</p>
+    <p>Ilośc wyselekcionowanych zadań: {{ works.count }}</p>
+    <div class="work-container">
+      <div class="info-item-work" v-for="work in works.works" :key="work.id">
         <p class="">ID: {{ work.id }}</p>
         <p class="">Data pracy: {{ work.dateOfWork }}</p>
         <p class="">Data Wpisu: {{ work.dateOfNote }}</p>
         <p class="">Miejsce: {{ work.place }}</p>
         <p class="">Rodzaj pracy: {{ work.kindOfWork }}</p>
         <p class="">Zadania: {{ work.tasks }}</p>
-        <p class="">Koszt: (zł) {{ work.rice }}</p>
+        <p class="">Koszt: {{ work.price }} zł</p>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
