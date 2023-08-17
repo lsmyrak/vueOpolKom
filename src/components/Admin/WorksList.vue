@@ -1,5 +1,13 @@
 <template>
   <div class="app">
+    <div class="auth-input-wrap">
+      <input class="auth-input" id="startDate" type="date" placeholder="Data początkowa" />
+      <label class="auth-label" htmlFor="startDate">Data początkowa</label>
+    </div>
+    <div class="auth-input-wrap">
+      <input class="auth-input" id="stopDate" type="date" placeholder="Data końcowa" />
+      <label class="auth-label" htmlFor="stoptDate">Data Końcowa</label>
+    </div>
     <p>Całkowity koszy wyselekcionowanych zadań: {{ works.totalPrice }}</p>
     <p>Ilośc wyselekcionowanych zadań: {{ works.count }}</p>
     <div class="work-container">
