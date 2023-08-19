@@ -1,3 +1,7 @@
+import axios from 'axios';
+import authHeader from '../Common/AuthHeader';
+import { BASE_URL_API } from '@/Common/URL';
+
 class UserService {
 
   addWork(dateOfWork, dateOfNote, place, kindOfWork, tasks, price) {
@@ -26,6 +30,16 @@ class UserService {
       headers: authHeader()
     });
   }
+
+  getUser(){
+    return axios.get(BASE_URL_API+'User/get',{headers:authHeader()
+    });
+  }
+
+}
+
+function padZero(number) {
+  return number < 10 ? '0' + number : number;
 }
 
 export default new UserService();

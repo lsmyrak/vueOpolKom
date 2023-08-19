@@ -7,7 +7,7 @@
         <p class="last-name">{{ user.lastName }}</p>
         <p class="user-icon email">{{ user.email }}</p>
         <p class="user-icon user-role">{{ user.userRole.name }}</p>
-        <p> Ilość zadań : {{ user.works.count }}</p>
+        <p>Ilość zadań : {{ user.works.count }}</p>
         <p>Łączna cena : {{ user.works.totalPrice }}</p>
       </div>
     </div>
